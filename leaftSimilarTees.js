@@ -56,5 +56,6 @@ leafSimilar = function(root1, root2) {
     dfs(root2, leaves2);
 
     return (leaves1.length == leaves2.length &&
-            leaves1.every((v, i) => v === leaves2[i]));
+            leaves1.every((v, i) => v === leaves2[i]))
 
+    }
