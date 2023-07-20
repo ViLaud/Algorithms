@@ -15,18 +15,19 @@
 //
 
 export function findSumOfThree(nums, target) {
-    let low = 0, 
-        high = nums.length - 1;
+    let l = 0, 
+        h = nums.length - 1;
     let seen = new Set();
-    while(low<high){
-        let rem = target - (nums[low] + nums[high]);
+    nums.sort((a, b) => a - b);
+    while(l<h){
+        let rem = target - (nums[l] + nums[h]);
         if(seen.has(rem)) return true;
-        if(rem > nums[high]){
-            seen.add(nums[low]);
-            low++;
+        if(rem > nums[h]){
+            seen.add(nums[l]);
+            l++;
         } else {
-            seen.add(nums[high]);
-            high--;
+            seen.add(nums[h]);
+            h--;
         }
     }
     return false
